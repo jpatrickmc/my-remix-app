@@ -24,6 +24,7 @@ export default function Index() {
 
   useEffect(() => {
     const fetchPosts = async () => {
+      // avoid race condition
       abortControllerRef.current?.abort();
       abortControllerRef.current = new AbortController();
 
